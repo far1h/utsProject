@@ -1,0 +1,48 @@
+Create Models, Migrations, and Seeder
+Read Data from Database and Show it on View
+
+1. Bikin model, migration, seeder, controller
+php artisan make:model Clothes -m -s -c
+
+2. Setting up the migration
+Clothes
+-> Name  (varchar)
+-> Price (int)
+
+3. Seeding up the tables
+
+4. Call the seeders on DatabaseSeeders
+
+5. Setting up the env
+.env -> DB_DATABASE = nama database kita
+
+6. migrate from code to MySQL db
+php artisan migrate:fresh --seed
+
+[data sudah masuk ke database]
+
+-- Read data from Database
+
+7. Create controller for controlling the page
+php artisan make:controller PageController
+
+8. Create function on PageController
+public function index(){
+   return view('...') -> diisi sesuai view nya kalian
+}
+
+9. Get all the data on PageController
+    public function index(){
+        // Get datanya
+        $clothes = Clothes::all();
+        // Lempar datanya ke view home
+        return view('home', ['clothes' => $clothes]);
+    }
+
+10. On the view, create foreach with the data that passed from the controller
+    This is home page!
+    @foreach ($clothes as $c)
+        <h1>{{ $c->id }}</h1>
+        <h1>{{ $c->name }}</h1>
+        <h1>{{ $c->price }}</h1>
+    @endforeach
