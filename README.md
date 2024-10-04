@@ -1,4 +1,4 @@
-commands:
+commands:  
 composer create-project laravel/laravel webeProject  
 php artisan make:model Clothes -m -s -c  
 php artisan migrate:fresh --seed  
