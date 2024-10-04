@@ -1,7 +1,7 @@
 commands:
-composer create-project laravel/laravel webeProject\ 
-php artisan make:model Clothes -m -s -c\ 
-php artisan migrate:fresh --seed\ 
+composer create-project laravel/laravel webeProject  
+php artisan make:model Clothes -m -s -c  
+php artisan migrate:fresh --seed  
 php artisan make:controller PageController
 
 
